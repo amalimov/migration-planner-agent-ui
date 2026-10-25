@@ -10,7 +10,7 @@ ENV GIT_TAG=${GIT_TAG}
 # stays in sync when the Yarn version is bumped (e.g. by Renovate).
 RUN YARN_RELEASE="$(sed -n 's/^yarnPath:[[:space:]]*//p' .yarnrc.yml)" && node "${YARN_RELEASE}" install --immutable && node "${YARN_RELEASE}" build:all
 
-FROM registry.access.redhat.com/ubi9/nginx-124@sha256:f414eb6c23a501c921542b75e30032979640682d8eaa37b500d7d34f4048e5ec
+FROM registry.access.redhat.com/ubi9/nginx-124@sha256:d830c4d4aa22d8e491c3d881e331f9cf9b25dd1ac8849448827774bf3c7571fe
 # Required labels for Red Hat / Enterprise Contract
 ARG IMAGE_NAME=migration-planner-agent-ui
 ARG IMAGE_VERSION=0.0.0
